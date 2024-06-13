@@ -4,7 +4,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate,upgrade
 from flask_wtf import CSRFProtect
-from flask_babel import Babel
+
 #criando o aplicativo
 app = Flask(__name__)
 #puxando o arquivo config.py
@@ -16,7 +16,7 @@ migrate = Migrate(app,db)
 csrf = CSRFProtect(app)
 csrf.init_app(app)
 
-babel = Babel(app)
+
 
 #FIXME:model
 from app.models import nivel_model
@@ -25,6 +25,10 @@ from app.models import usuario_model
 #FIXME:view
 from .views import nivel_view
 from .views import usuario_view
+
+#FIXME:entidades
+from .entidades import nivel
+from .entidades import usuario
 
 
 

@@ -6,6 +6,7 @@ from app.forms.nivel_form import NivelForm
 from app.forms.usuario_form import UsuarioForm
 
 
+
 from sqlalchemy.orm import joinedload
 
 
@@ -24,7 +25,7 @@ def cadastrar_usuario():
         nome = form.nome.data
         nivel_id = form.nivel_id.data
         email = form.email.data
-        tecnico = Usuario(nome=nome,email=email,fk_nivel_id=nivel_id)
+        usuario_novo =  Usuario(nome=nome,email=email,fk_nivel_id=nivel_id)
         try:
             db.session.add(tecnico)
             db.session.commit()
